@@ -2,23 +2,31 @@ import os
 from sample_config import Config
 
 class script(object):
-    START_TEXT = """ A Simple File Renamer Bot With Permanent Thumbnail support!💯
+    START_TEXT = """ 💞 Hello,
 
-<b>Send me any Telegram file and choose appropriate option! </b>"""
+This is a Telegram Rename Beta ver.2!
+
+<b> Please send me any Telegram file and reply to that file to Rename New Name.mkv
+
+ 👉  Do one By One . Otherwise you will get Permenent Ban 
+
+  © @Amal_PM </b>
+  
+/help for more details.."""
 
     RENAME_403_ERR = "What Are You Doing? You are Banned"
-    UPGRADE_TEXT = "CONTACT @prgofficial"
-    DOWNLOAD_START = "Give Me Some Time..."
-    UPLOAD_START = "Starting to upload..."
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me > ©  @prgofficial **"
-    SAVED_THUMB = "Thumbnail Saved ✅ This Is Permanent"
-    DEL_THUMB = "Thumbnail cleared succesfully!"
-    NO_THUMB = "No thumbnails found!"
-    SAVED_RECVD_DOC_FILE = "File Downloaded Successfully 😎"
+    UPGRADE_TEXT = "<b>Contact @Amal_PM</b>"
+    DOWNLOAD_START = "<b>Trying to Download..📥</b>"
+    UPLOAD_START = "<b>Trying to Upload..📤</b>"
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me > ©  @Amal_PM **"
+    SAVED_THUMB = "**✅ Custom thumbnail saved. This image will be used in the file for 24Hr.**"
+    DEL_THUMB = "<b>Thumbnail cleared succesfully!</b>"
+    NO_THUMB = "<b>No thumbnails found!</b>"
+    SAVED_RECVD_DOC_FILE = "**Document Downloaded Successfully.**"
     CUSTOM_CAPTION_UL_FILE = " "
     CAPTION = "**{}**\n\n" + str(Config.CAPTION)
-    HELP_USER = """It's not that complicated😅
+    HELP_USER = """<b>It's not that complicated😅
     
 1. Send me any Telegram File.
-2. Choose appropriate option."""
+2. Choose appropriate option.</b>"""
 
