@@ -3,7 +3,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+import random
 import time
 import os
 import sqlite3
@@ -65,6 +65,22 @@ def upgrade(bot, update):
     
 @Client.on_message(filters.private & (filters.document | filters.video | filters.audio | filters.voice | filters.video_note))
 async def rename_cb(bot, update):
+    stickers = [
+        "CAACAgUAAx0CR52brgABAztWYMr0c6pnuuyax0lMJa6fMTHVb90AAp4CAALt_CBW_K1bvpTAQg0eBA",
+        "CAACAgUAAx0CR52brgABAztyYMr0_i-Da3NCXbEAAWpUiSbaXdFBAAJRAgAClhhxVFl1D3zKX_HDHgQ",
+        "CAACAgUAAx0CR52brgABAzt2YMr1ZhaD1QqaLAt-in6TH535YEkAAiQCAAKtkLBVLS6YjJCDJoYeBA",
+        "CAACAgUAAx0CR52brgABAzt5YMr1zf9AZcfWXHpcmw5nG8deom0AAsoAA5xr3DzY2D0P8fUfaB4E",
+        "CAACAgUAAx0CR52brgABAzt-YMr2CYT4V992bKUT6GpAYZumPCoAAvgAA5xr3Dz7JrHmMtOI3R4E",
+        "CAACAgUAAx0CR52brgABAzuBYMr2R1aHvk9genINSQlwYt9xSZUAAscAA4avgRoka_uuHm3rzR4E",
+        "CAACAgUAAx0CR52brgABAzuHYMr2fowuk7J0jbqv1UeFmnTT6ygAAjoAA2nyaCZ7Tqu2UnozDh4E"
+    ]
+    
+    if update.from_user.id not in AUTH_USERS:
+        await bot.send_sticker(
+            chat_id=update.chat.id,
+            sticker=random.choice(stickers)
+        )
+        return
  
     file = update.document or update.video or update.audio or update.voice or update.video_note
     try:
