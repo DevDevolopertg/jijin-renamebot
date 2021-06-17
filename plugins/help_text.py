@@ -75,7 +75,7 @@ async def rename_cb(bot, update):
         "CAACAgUAAx0CR52brgABAzuHYMr2fowuk7J0jbqv1UeFmnTT6ygAAjoAA2nyaCZ7Tqu2UnozDh4E"
     ]
     
-    if update.from_user.id not in AUTH_USERS:
+    if update.from_user.id not in Config.AUTH_USERS:
         await bot.send_sticker(
             chat_id=update.chat.id,
             sticker=random.choice(stickers)
